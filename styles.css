@@ -1,0 +1,38 @@
+.container {
+    display: flex; /* the container is now a flexbox*/
+    flex-wrap: wrap; /* When the squares dont fit on one line it goes to the next*/
+    width: 480px; /* the width of the container*/
+    height: 480px;/* the heigth of the container*/
+    margin: auto; /* The box is now in the middle of the page*/
+    
+}
+
+.grid-square {
+    width: 30px; /* Each square is 30px wide so that it fits perfectly in 480px*/
+    height: 30px; /* Same as over*/
+    box-sizing: border-box; /* Whitout this, the border would count as an extra pixel*/
+    border: 1px solid #8a8a8a; /* Puts a border around each square*/
+    background-color: #f9f9f9; /* Each squares backgorund color*/
+    cursor: cell;
+}
+
+.top {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    margin-bottom: 10px;
+}
+
+button {
+    display: block;
+    padding: 10px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f6a9e9;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #f783e4;
+}
