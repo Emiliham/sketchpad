@@ -7,9 +7,8 @@
     
 }
 
-.grid-square {
-    width: 30px; /* Each square is 30px wide so that it fits perfectly in 480px*/
-    height: 30px; /* Same as over*/
+.square {
+    
     box-sizing: border-box; /* Whitout this, the border would count as an extra pixel*/
     border: 1px solid #8a8a8a; /* Puts a border around each square*/
     background-color: #f9f9f9; /* Each squares backgorund color*/
@@ -33,6 +32,6 @@ button {
     border-radius: 10px;
 }
 
-button:hover {
-    background-color: #f783e4;
+.hovered {
+    background-color: #c56565;
 }
