@@ -32,8 +32,8 @@ function createNewGrid() {
         return;
     }
 
-    // Create the new grid
-    createGrid(squaresPerSide);
+    // creating the new grid
+    createGrid(squaresPerSide);s
 }
 
 // Create the initial 16x16 grid
