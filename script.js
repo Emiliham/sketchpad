@@ -1,20 +1,46 @@
 const container = document.querySelector(".container");
 
+/**
+ * This function creates the grid and the total cells will be
+ * the number of squares per side squared
+ * @param squarePrSide is the number of squares per side of the grid
+ */
 function createGrid(squarePrSide) {
     // Clearing everything in container
+    // innerHTML is all the code inside the container element
     container.innerHTML = '';
+
 
     // caluclating how big each square should be when the container is 480
     const squareSize = 480 / squarePrSide;
 
-    // Create new squares
+    let mousePressed = false; // in the beginning the mousepressed is false
+
+    // if the mouse is pressed down inside the container, then mousepressed is true
+    container.addEventListener("mousedown", () => mousePressed = true);
+    // if the mouse is not clocket then mousePressed is false
+    container.addEventListener("mouseup", () => mousePressed = false);
+
+    // Create new squares and loops squares per side^2
     for (let i = 0; i < squarePrSide * squarePrSide; i++) {
+        // creating a div that is one square
         const newDiv = document.createElement("div");
+        // giving the element a class
         newDiv.classList.add("square");
+        // the square size in pixels
         newDiv.style.width = `${squareSize}px`;
         newDiv.style.height = `${squareSize}px`;
+
+         // paint when the mouse is down on the square
+        newDiv.addEventListener("mousedown", () => {
+            newDiv.classList.add("pressed");
+        });
+
+        // Paint on the square if mouse is still pressed
         newDiv.addEventListener("mouseover", () => {
-            newDiv.classList.add("hovered");
+            if (mousePressed) {
+                newDiv.classList.add("pressed");
+            }
         });
         container.appendChild(newDiv);
     }
@@ -37,4 +63,4 @@ function createNewGrid() {
 }
 
 // Create the initial 16x16 grid
-createGrid(16);
+createGrid(50);
